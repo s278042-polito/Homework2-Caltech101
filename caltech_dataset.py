@@ -18,7 +18,7 @@ def make_dataset(directory, split, class_to_idx):
     instances = []
     directory = os.path.expanduser(directory)
     split_filepath = os.path.join(split + '.txt')
-    split_instances = open(split_filepath).readlines()
+    split_instances = open(split_filepath).read().splitlines()
 
     for target_class in sorted(class_to_idx.keys()):
         class_index = class_to_idx[target_class]
