@@ -17,8 +17,8 @@ def pil_loader(path):
 def make_dataset(directory, split, class_to_idx):
     instances = []
     directory = os.path.expanduser(directory)
-    split_filename = split + '.txt'
-    split_instances = open(split_filename).readlines()
+    split_filepath = os.path.join('Caltech101', split + '.txt')
+    split_instances = open(split_filepath).readlines()
 
     for target_class in sorted(class_to_idx.keys()):
         class_index = class_to_idx[target_class]
